@@ -20,19 +20,19 @@
     <element name="Device_0_Blue">
         <x>0</x>
         <y>250</y>
-        <width>1280</width>
+        <width>1440</width>
         <height>55</height>
     </element>
     <element name="Device_0_Green">
         <x>0</x>
         <y>183</y>
-        <width>1280</width>
+        <width>1440</width>
         <height>37</height>
     </element>
     <element name="Device_0_Red">
         <x>0</x>
         <y>112</y>
-        <width>1280</width>
+        <width>1440</width>
         <height>41</height>
     </element>
     <element name="Device_0_birghtness">
@@ -56,19 +56,19 @@
     <element name="Device_1_Blue">
         <x>0</x>
         <y>482</y>
-        <width>1280</width>
+        <width>1440</width>
         <height>32</height>
     </element>
     <element name="Device_1_Green">
         <x>0</x>
         <y>403</y>
-        <width>1280</width>
+        <width>1440</width>
         <height>49</height>
     </element>
     <element name="Device_1_Red">
         <x>0</x>
         <y>335</y>
-        <width>1280</width>
+        <width>1440</width>
         <height>38</height>
     </element>
     <element name="Device_1_birghtness">
@@ -91,20 +91,20 @@
     </element>
     <element name="Device_2_Blue">
         <x>0</x>
-        <y>664</y>
-        <width>1280</width>
+        <y>738</y>
+        <width>1440</width>
         <height>40</height>
     </element>
     <element name="Device_2_Green">
         <x>0</x>
         <y>619</y>
-        <width>1280</width>
-        <height>15</height>
+        <width>1440</width>
+        <height>89</height>
     </element>
     <element name="Device_2_Red">
         <x>0</x>
         <y>544</y>
-        <width>1280</width>
+        <width>1440</width>
         <height>45</height>
     </element>
     <element name="Device_2_birghtness">
@@ -200,7 +200,7 @@
     <element name="Track">
         <x>0</x>
         <y>50</y>
-        <width>1280</width>
+        <width>1440</width>
         <height>32</height>
     </element>
 </positions>
