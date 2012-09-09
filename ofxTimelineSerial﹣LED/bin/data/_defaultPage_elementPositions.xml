@@ -1,0 +1,206 @@
+<positions>
+    <element name="Colors">
+        <x>0</x>
+        <y>339</y>
+        <width>1440</width>
+        <height>163</height>
+    </element>
+    <element name="Device_0Blue">
+        <x>0</x>
+        <y>124</y>
+        <width>1440</width>
+        <height>43</height>
+    </element>
+    <element name="Device_0Green">
+        <x>0</x>
+        <y>197</y>
+        <width>1440</width>
+        <height>29</height>
+    </element>
+    <element name="Device_0_Blue">
+        <x>0</x>
+        <y>250</y>
+        <width>1280</width>
+        <height>55</height>
+    </element>
+    <element name="Device_0_Green">
+        <x>0</x>
+        <y>183</y>
+        <width>1280</width>
+        <height>37</height>
+    </element>
+    <element name="Device_0_Red">
+        <x>0</x>
+        <y>112</y>
+        <width>1280</width>
+        <height>41</height>
+    </element>
+    <element name="Device_0_birghtness">
+        <x>0</x>
+        <y>50</y>
+        <width>1440</width>
+        <height>14</height>
+    </element>
+    <element name="Device_1Blue">
+        <x>0</x>
+        <y>387</y>
+        <width>1440</width>
+        <height>24</height>
+    </element>
+    <element name="Device_1Green">
+        <x>0</x>
+        <y>465</y>
+        <width>1440</width>
+        <height>25</height>
+    </element>
+    <element name="Device_1_Blue">
+        <x>0</x>
+        <y>482</y>
+        <width>1280</width>
+        <height>32</height>
+    </element>
+    <element name="Device_1_Green">
+        <x>0</x>
+        <y>403</y>
+        <width>1280</width>
+        <height>49</height>
+    </element>
+    <element name="Device_1_Red">
+        <x>0</x>
+        <y>335</y>
+        <width>1280</width>
+        <height>38</height>
+    </element>
+    <element name="Device_1_birghtness">
+        <x>0</x>
+        <y>256</y>
+        <width>1440</width>
+        <height>28</height>
+    </element>
+    <element name="Device_2Blue">
+        <x>0</x>
+        <y>621</y>
+        <width>1440</width>
+        <height>18</height>
+    </element>
+    <element name="Device_2Green">
+        <x>0</x>
+        <y>669</y>
+        <width>1440</width>
+        <height>50</height>
+    </element>
+    <element name="Device_2_Blue">
+        <x>0</x>
+        <y>664</y>
+        <width>1280</width>
+        <height>40</height>
+    </element>
+    <element name="Device_2_Green">
+        <x>0</x>
+        <y>619</y>
+        <width>1280</width>
+        <height>15</height>
+    </element>
+    <element name="Device_2_Red">
+        <x>0</x>
+        <y>544</y>
+        <width>1280</width>
+        <height>45</height>
+    </element>
+    <element name="Device_2_birghtness">
+        <x>0</x>
+        <y>520</y>
+        <width>1440</width>
+        <height>41</height>
+    </element>
+    <element name="Device_3Blue">
+        <x>0</x>
+        <y>1359</y>
+        <width>1440</width>
+        <height>50</height>
+    </element>
+    <element name="Device_3Green">
+        <x>0</x>
+        <y>1589</y>
+        <width>1440</width>
+        <height>50</height>
+    </element>
+    <element name="Device_3_Red">
+        <x>0</x>
+        <y>1129</y>
+        <width>1440</width>
+        <height>50</height>
+    </element>
+    <element name="Device_3_birghtness">
+        <x>0</x>
+        <y>899</y>
+        <width>1440</width>
+        <height>50</height>
+    </element>
+    <element name="Device_4Blue">
+        <x>0</x>
+        <y>2279</y>
+        <width>1440</width>
+        <height>50</height>
+    </element>
+    <element name="Device_4Green">
+        <x>0</x>
+        <y>2509</y>
+        <width>1440</width>
+        <height>50</height>
+    </element>
+    <element name="Device_4_Red">
+        <x>0</x>
+        <y>2049</y>
+        <width>1440</width>
+        <height>50</height>
+    </element>
+    <element name="Device_4_birghtness">
+        <x>0</x>
+        <y>1819</y>
+        <width>1440</width>
+        <height>50</height>
+    </element>
+    <element name="Device_5Blue">
+        <x>0</x>
+        <y>4190</y>
+        <width>1440</width>
+        <height>50</height>
+    </element>
+    <element name="Device_5Green">
+        <x>0</x>
+        <y>4420</y>
+        <width>1440</width>
+        <height>50</height>
+    </element>
+    <element name="Device_5_Red">
+        <x>0</x>
+        <y>3960</y>
+        <width>1440</width>
+        <height>50</height>
+    </element>
+    <element name="Device_5_birghtness">
+        <x>0</x>
+        <y>3730</y>
+        <width>1440</width>
+        <height>50</height>
+    </element>
+    <element name="Rotate X">
+        <x>0</x>
+        <y>50</y>
+        <width>1440</width>
+        <height>117</height>
+    </element>
+    <element name="Rotate Y">
+        <x>0</x>
+        <y>197</y>
+        <width>1440</width>
+        <height>112</height>
+    </element>
+    <element name="Track">
+        <x>0</x>
+        <y>50</y>
+        <width>1280</width>
+        <height>32</height>
+    </element>
+</positions>

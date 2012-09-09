@@ -45,7 +45,18 @@
 		514FF19315B44E87002C396D /* ofxMidiMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 514FF18815B44E87002C396D /* ofxMidiMessage.cpp */; };
 		514FF19415B44E87002C396D /* ofxMidiOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 514FF18A15B44E87002C396D /* ofxMidiOut.cpp */; };
 		514FF19515B44E87002C396D /* RtMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 514FF19015B44E87002C396D /* RtMidi.cpp */; };
-		514FF19715B4565A002C396D /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514FF19615B4565A002C396D /* CoreMIDI.framework */; };
+		5163376215FC7B090058F359 /* ofxTLAudioWaveform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5163376015FC7B090058F359 /* ofxTLAudioWaveform.cpp */; };
+		5163378D15FC7B100058F359 /* libkiss.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5163376A15FC7B100058F359 /* libkiss.a */; };
+		5163378E15FC7B100058F359 /* libkiss.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5163376C15FC7B100058F359 /* libkiss.a */; };
+		5163378F15FC7B100058F359 /* kiss_fft.c in Sources */ = {isa = PBXBuildFile; fileRef = 5163376F15FC7B100058F359 /* kiss_fft.c */; };
+		5163379015FC7B100058F359 /* kiss_fftr.c in Sources */ = {isa = PBXBuildFile; fileRef = 5163377015FC7B100058F359 /* kiss_fftr.c */; };
+		5163379115FC7B100058F359 /* ofOpenALSoundPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5163377215FC7B100058F359 /* ofOpenALSoundPlayer.cpp */; };
+		5163379215FC7B100058F359 /* libopenal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5163377C15FC7B100058F359 /* libopenal.a */; };
+		5163379315FC7B100058F359 /* libsndfile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5163378115FC7B100058F359 /* libsndfile.a */; };
+		5163379415FC7B100058F359 /* libOpenAL32.dll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5163378B15FC7B100058F359 /* libOpenAL32.dll.a */; };
+		5163379515FC7B100058F359 /* libsndfile-1.lib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5163378C15FC7B100058F359 /* libsndfile-1.lib */; };
+		5163379715FC7B240058F359 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5163379615FC7B240058F359 /* CoreMIDI.framework */; };
+		5163379915FC7B2C0058F359 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5163379815FC7B2C0058F359 /* OpenAL.framework */; };
 		5864ad82e20f15536d054ea319473de3 /* ofxOscMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = df49d76c45d5db505a234880104e4dc7 /* ofxOscMessage.cpp */; };
 		5a4349e9754d6fa14c0f2a3a1abc30b6 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = fc5da1c87211d4f6377da7199d8c5a1e /* tinyxmlparser.cpp */; };
 		62545d179c94265ca1389d4ac8d694a5 /* OscOutboundPacketStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63a47ac60ffafc3bf093ec0f62a9a4d4 /* OscOutboundPacketStream.cpp */; };
@@ -250,7 +261,32 @@
 		514FF18F15B44E87002C396D /* RtError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RtError.h; sourceTree = "<group>"; };
 		514FF19015B44E87002C396D /* RtMidi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RtMidi.cpp; sourceTree = "<group>"; };
 		514FF19115B44E87002C396D /* RtMidi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RtMidi.h; sourceTree = "<group>"; };
-		514FF19615B4565A002C396D /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = ../../../../../System/Library/Frameworks/CoreMIDI.framework; sourceTree = "<group>"; };
+		5163376015FC7B090058F359 /* ofxTLAudioWaveform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTLAudioWaveform.cpp; sourceTree = "<group>"; };
+		5163376115FC7B090058F359 /* ofxTLAudioWaveform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTLAudioWaveform.h; sourceTree = "<group>"; };
+		5163376615FC7B100058F359 /* kiss_fft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kiss_fft.h; sourceTree = "<group>"; };
+		5163376715FC7B100058F359 /* kiss_fftr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kiss_fftr.h; sourceTree = "<group>"; };
+		5163376A15FC7B100058F359 /* libkiss.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libkiss.a; sourceTree = "<group>"; };
+		5163376C15FC7B100058F359 /* libkiss.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libkiss.a; sourceTree = "<group>"; };
+		5163376E15FC7B100058F359 /* _kiss_fft_guts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _kiss_fft_guts.h; sourceTree = "<group>"; };
+		5163376F15FC7B100058F359 /* kiss_fft.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kiss_fft.c; sourceTree = "<group>"; };
+		5163377015FC7B100058F359 /* kiss_fftr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kiss_fftr.c; sourceTree = "<group>"; };
+		5163377215FC7B100058F359 /* ofOpenALSoundPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofOpenALSoundPlayer.cpp; sourceTree = "<group>"; };
+		5163377315FC7B100058F359 /* ofOpenALSoundPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofOpenALSoundPlayer.h; sourceTree = "<group>"; };
+		5163377815FC7B100058F359 /* al.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = al.h; sourceTree = "<group>"; };
+		5163377915FC7B100058F359 /* alc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alc.h; sourceTree = "<group>"; };
+		5163377A15FC7B100058F359 /* alext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alext.h; sourceTree = "<group>"; };
+		5163377C15FC7B100058F359 /* libopenal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopenal.a; sourceTree = "<group>"; };
+		5163377F15FC7B100058F359 /* sndfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sndfile.h; sourceTree = "<group>"; };
+		5163378115FC7B100058F359 /* libsndfile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsndfile.a; sourceTree = "<group>"; };
+		5163378315FC7B100058F359 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
+		5163378615FC7B100058F359 /* al.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = al.h; sourceTree = "<group>"; };
+		5163378715FC7B100058F359 /* alc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alc.h; sourceTree = "<group>"; };
+		5163378815FC7B100058F359 /* alext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alext.h; sourceTree = "<group>"; };
+		5163378915FC7B100058F359 /* sndfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sndfile.h; sourceTree = "<group>"; };
+		5163378B15FC7B100058F359 /* libOpenAL32.dll.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOpenAL32.dll.a; sourceTree = "<group>"; };
+		5163378C15FC7B100058F359 /* libsndfile-1.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libsndfile-1.lib"; sourceTree = "<group>"; };
+		5163379615FC7B240058F359 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = ../../../../../../../System/Library/Frameworks/CoreMIDI.framework; sourceTree = "<group>"; };
+		5163379815FC7B2C0058F359 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = ../../../../../../../System/Library/Frameworks/OpenAL.framework; sourceTree = "<group>"; };
 		51FE02DD15B32B5600D5DB78 /* config.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = config.xml; path = bin/data/config.xml; sourceTree = "<group>"; };
 		5928aa323f5c2690b06c837d8d036f55 /* UdpSocketWin.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = UdpSocketWin.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/win32/UdpSocketWin.cpp; sourceTree = SOURCE_ROOT; };
 		63a47ac60ffafc3bf093ec0f62a9a4d4 /* OscOutboundPacketStream.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OscOutboundPacketStream.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscOutboundPacketStream.cpp; sourceTree = SOURCE_ROOT; };
@@ -323,7 +359,14 @@
 				E4C2424710CC5A17004149E2 /* AppKit.framework in Frameworks */,
 				E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */,
 				E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */,
-				514FF19715B4565A002C396D /* CoreMIDI.framework in Frameworks */,
+				5163378D15FC7B100058F359 /* libkiss.a in Frameworks */,
+				5163378E15FC7B100058F359 /* libkiss.a in Frameworks */,
+				5163379215FC7B100058F359 /* libopenal.a in Frameworks */,
+				5163379315FC7B100058F359 /* libsndfile.a in Frameworks */,
+				5163379415FC7B100058F359 /* libOpenAL32.dll.a in Frameworks */,
+				5163379515FC7B100058F359 /* libsndfile-1.lib in Frameworks */,
+				5163379715FC7B240058F359 /* CoreMIDI.framework in Frameworks */,
+				5163379915FC7B2C0058F359 /* OpenAL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +437,7 @@
 		510E4D0D15B315D7004670D9 /* ofxTimeline */ = {
 			isa = PBXGroup;
 			children = (
+				5163376315FC7B100058F359 /* libs */,
 				510E4DF215B315D7004670D9 /* src */,
 			);
 			name = ofxTimeline;
@@ -403,6 +447,8 @@
 		510E4DF215B315D7004670D9 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				5163376015FC7B090058F359 /* ofxTLAudioWaveform.cpp */,
+				5163376115FC7B090058F359 /* ofxTLAudioWaveform.h */,
 				510E4DF315B315D7004670D9 /* ofxTimeline.cpp */,
 				510E4DF415B315D7004670D9 /* ofxTimeline.h */,
 				510E4DF715B315D7004670D9 /* ofxTLColors.cpp */,
@@ -612,6 +658,187 @@
 			path = rtmidi;
 			sourceTree = "<group>";
 		};
+		5163376315FC7B100058F359 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				5163376415FC7B100058F359 /* kiss */,
+				5163377115FC7B100058F359 /* ofOpenALSoundPlayer */,
+				5163377415FC7B100058F359 /* sndfile */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		5163376415FC7B100058F359 /* kiss */ = {
+			isa = PBXGroup;
+			children = (
+				5163376515FC7B100058F359 /* include */,
+				5163376815FC7B100058F359 /* lib */,
+				5163376D15FC7B100058F359 /* src */,
+			);
+			path = kiss;
+			sourceTree = "<group>";
+		};
+		5163376515FC7B100058F359 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				5163376615FC7B100058F359 /* kiss_fft.h */,
+				5163376715FC7B100058F359 /* kiss_fftr.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		5163376815FC7B100058F359 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				5163376915FC7B100058F359 /* linux */,
+				5163376B15FC7B100058F359 /* linux64 */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		5163376915FC7B100058F359 /* linux */ = {
+			isa = PBXGroup;
+			children = (
+				5163376A15FC7B100058F359 /* libkiss.a */,
+			);
+			path = linux;
+			sourceTree = "<group>";
+		};
+		5163376B15FC7B100058F359 /* linux64 */ = {
+			isa = PBXGroup;
+			children = (
+				5163376C15FC7B100058F359 /* libkiss.a */,
+			);
+			path = linux64;
+			sourceTree = "<group>";
+		};
+		5163376D15FC7B100058F359 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				5163376E15FC7B100058F359 /* _kiss_fft_guts.h */,
+				5163376F15FC7B100058F359 /* kiss_fft.c */,
+				5163377015FC7B100058F359 /* kiss_fftr.c */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		5163377115FC7B100058F359 /* ofOpenALSoundPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				5163377215FC7B100058F359 /* ofOpenALSoundPlayer.cpp */,
+				5163377315FC7B100058F359 /* ofOpenALSoundPlayer.h */,
+			);
+			path = ofOpenALSoundPlayer;
+			sourceTree = "<group>";
+		};
+		5163377415FC7B100058F359 /* sndfile */ = {
+			isa = PBXGroup;
+			children = (
+				5163377515FC7B100058F359 /* linux */,
+				5163377D15FC7B100058F359 /* osx */,
+				5163378215FC7B100058F359 /* win32 */,
+			);
+			path = sndfile;
+			sourceTree = "<group>";
+		};
+		5163377515FC7B100058F359 /* linux */ = {
+			isa = PBXGroup;
+			children = (
+				5163377615FC7B100058F359 /* include */,
+				5163377B15FC7B100058F359 /* lib */,
+			);
+			path = linux;
+			sourceTree = "<group>";
+		};
+		5163377615FC7B100058F359 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				5163377715FC7B100058F359 /* AL */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		5163377715FC7B100058F359 /* AL */ = {
+			isa = PBXGroup;
+			children = (
+				5163377815FC7B100058F359 /* al.h */,
+				5163377915FC7B100058F359 /* alc.h */,
+				5163377A15FC7B100058F359 /* alext.h */,
+			);
+			path = AL;
+			sourceTree = "<group>";
+		};
+		5163377B15FC7B100058F359 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				5163377C15FC7B100058F359 /* libopenal.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		5163377D15FC7B100058F359 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				5163377E15FC7B100058F359 /* include */,
+				5163378015FC7B100058F359 /* lib */,
+			);
+			path = osx;
+			sourceTree = "<group>";
+		};
+		5163377E15FC7B100058F359 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				5163377F15FC7B100058F359 /* sndfile.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		5163378015FC7B100058F359 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				5163378115FC7B100058F359 /* libsndfile.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		5163378215FC7B100058F359 /* win32 */ = {
+			isa = PBXGroup;
+			children = (
+				5163378315FC7B100058F359 /* COPYING */,
+				5163378415FC7B100058F359 /* include */,
+				5163378A15FC7B100058F359 /* lib */,
+			);
+			path = win32;
+			sourceTree = "<group>";
+		};
+		5163378415FC7B100058F359 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				5163378515FC7B100058F359 /* AL */,
+				5163378915FC7B100058F359 /* sndfile.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		5163378515FC7B100058F359 /* AL */ = {
+			isa = PBXGroup;
+			children = (
+				5163378615FC7B100058F359 /* al.h */,
+				5163378715FC7B100058F359 /* alc.h */,
+				5163378815FC7B100058F359 /* alext.h */,
+			);
+			path = AL;
+			sourceTree = "<group>";
+		};
+		5163378A15FC7B100058F359 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				5163378B15FC7B100058F359 /* libOpenAL32.dll.a */,
+				5163378C15FC7B100058F359 /* libsndfile-1.lib */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 		51FE02DC15B32B4700D5DB78 /* data */ = {
 			isa = PBXGroup;
 			children = (
@@ -677,7 +904,8 @@
 		BBAB23C913894ECA00AA2426 /* system frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				514FF19615B4565A002C396D /* CoreMIDI.framework */,
+				5163379815FC7B2C0058F359 /* OpenAL.framework */,
+				5163379615FC7B240058F359 /* CoreMIDI.framework */,
 				E4C2424410CC5A17004149E2 /* AppKit.framework */,
 				E4C2424510CC5A17004149E2 /* Cocoa.framework */,
 				E4C2424610CC5A17004149E2 /* IOKit.framework */,
@@ -955,6 +1183,10 @@
 				514FF19315B44E87002C396D /* ofxMidiMessage.cpp in Sources */,
 				514FF19415B44E87002C396D /* ofxMidiOut.cpp in Sources */,
 				514FF19515B44E87002C396D /* RtMidi.cpp in Sources */,
+				5163376215FC7B090058F359 /* ofxTLAudioWaveform.cpp in Sources */,
+				5163378F15FC7B100058F359 /* kiss_fft.c in Sources */,
+				5163379015FC7B100058F359 /* kiss_fftr.c in Sources */,
+				5163379115FC7B100058F359 /* ofOpenALSoundPlayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1241,12 +1473,22 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_5)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_6)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_10)",
 				);
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/kiss/lib/linux\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_10 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/sndfile/win32/lib\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/kiss/lib/linux64\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/sndfile/linux/lib\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/sndfile/osx/lib\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_5 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/sndfile/win32/lib\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_6 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/kiss/lib/linux\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/kiss/lib/linux64\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/sndfile/linux/lib\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/sndfile/osx/lib\"";
 				PREBINDING = NO;
 				PRODUCT_NAME = "ofxTimelineSerial﹣StepMotorDebug";
 				WRAPPER_EXTENSION = app;
@@ -1337,12 +1579,22 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_5)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_6)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_10)",
 				);
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/kiss/lib/linux\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_10 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/sndfile/win32/lib\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/kiss/lib/linux64\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/sndfile/linux/lib\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/sndfile/osx/lib\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_5 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/sndfile/win32/lib\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_6 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/kiss/lib/linux\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/kiss/lib/linux64\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/sndfile/linux/lib\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9 = "\"$(SRCROOT)/../../../addons/ofxTimeline/libs/sndfile/osx/lib\"";
 				PREBINDING = NO;
 				PRODUCT_NAME = "ofxTimelineSerial﹣StepMotor";
 				WRAPPER_EXTENSION = app;

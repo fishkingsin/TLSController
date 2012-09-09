@@ -4,6 +4,8 @@
 //int sendwhich = 0;
 int timeDiff = 0;
 bool isSent = false;
+#define SIZE 200
+#define HSIZE SIZE*0.5
 //--------------------------------------------------------------
 void testApp::setup(){
     ofxXmlSettings config;
@@ -46,12 +48,28 @@ void testApp::setup(){
 	
 	glEnable(GL_DEPTH_TEST);
 	timeline.setup();
+
     timeline.setWidth(ofGetScreenWidth());
-	timeline.setDurationInFrames(30*60*3);
+	timeline.setDurationInSeconds(148);
 	timeline.setLoopType(OF_LOOP_NORMAL);
-    
+
+    waveform.setup();
+	waveform.loadSoundfile("10)Silent Night Master.wav");
+    timeline.setDurationInSeconds(waveform.getDuration());
+    timeline.addElement("Track", &waveform);	
+
 	timeline.addTriggers("Step_0", "Step_0.xml");
+    
+    timeline.addPage("Keyframe");
+    for(int i = 0 ;i < NUM_DEVICE ; i++)
+    {
+        string device_name = "Device_"+ofToString(i,0);
+        timeline.addKeyframes(device_name,device_name+".xml",ofRange(0.0f, 1.0f));
+    }
+    
     timeline.getColors().loadColors("defaultColors.xml");
+    
+    
     //    timeline.setCurrentPage(1);
     //    timeline.setSnapping(true);
     //    timeline.enableSnapToBPM(120.f);
@@ -138,7 +156,11 @@ void testApp::setup(){
     gui->loadSettings("GUI/guiSettings.xml");
     gui1->loadSettings("GUI/guiSettings1.xml");
     
-    
+//    for(int i = 0 ; i < NUM_DEVICE ; i++)
+//    {
+//        lineLength[i] = 0;
+//        dir[i] =  'S';
+//    }
 	
 	//----------------------------------- note:
 	// < this should be set
@@ -172,7 +194,19 @@ void testApp::setup(){
 	// print received messages to the console
 	midiIn.setVerbose(true);
     
-    
+    //prepare quadric for sphere
+    ofEnableLighting();
+    quadric = gluNewQuadric();
+    gluQuadricTexture(quadric, GL_TRUE);
+    gluQuadricNormals(quadric, GLU_SMOOTH);
+    directionalLight.setDiffuseColor(ofColor(255,255,125));
+	directionalLight.setSpecularColor(ofColor(255.f, 255.f, 255.f));
+	directionalLight.setDirectional();
+    // set the direction of the light
+    // set it pointing from left to right -> //
+	directionalLight.setOrientation( ofVec3f(0,90 , -90) );
+    isTimelineShow = timeline.toggleShow();
+    isTimelineShow = timeline.toggleShow();
 }
 //--------------------------------------------------------------
 void testApp::exit()
@@ -482,6 +516,24 @@ void testApp::newMidiMessage(ofxMidiMessage& msg) {
 }
 //--------------------------------------------------------------
 void testApp::update(){
+    for(int i = 0 ; i< NUM_DEVICE ;i++)
+    {
+        string device_name = "Device_"+ofToString(i);
+        float length  = timeline.getKeyframeValue(device_name);
+        string s = "k,"+ofToString(i)+","+ofToString(length);
+        dataSet[i].length = length*ofGetHeight()*0.5;
+        //ofLog(OF_LOG_VERBOSE,"Send to Serial : "+s);
+        //serial.writeBytes((unsigned char*)s.c_str(),s.length());
+        
+    }
+    if(isTimelineShow)
+    {
+        cam.disableMouseInput();
+    }
+    else
+    {
+        cam.enableMouseInput();
+    }
     nTimesRead = 0;
     nBytesRead = 0;
     int nRead  = 0;  // a temp variable to keep count per read
@@ -508,12 +560,59 @@ void testApp::update(){
             isSent = false;
         }
     }
-    
-    
+    float diff = ofGetElapsedTimef()-count;
+    for(int i = 0 ; i < NUM_DEVICE ; i ++)
+    {
+        switch(dataSet[i].dir)
+        {
+            case 'S':break;
+            case'U':
+                dataSet[i].length-=diff*dataSet[i].speed;
+                break;
+            case 'D':
+                dataSet[i].length+=diff*dataSet[i].speed;
+                break;
+        }
+    }
+    count = ofGetElapsedTimef();
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
+    ofBackgroundGradient(ofColor::gray, ofColor::black);
+    glEnable(GL_DEPTH_TEST);
+    ofEnableLighting();
+        directionalLight.enable();
+    cam.begin();
+    ofPushStyle();
+    ofSetColor(255);
+    ofSetLineWidth(5);
+    glPushMatrix();
+    glTranslatef(SIZE*-1.5,0, SIZE*-1.5);
+    ofScale(1, -1);
+    for(int i = 0 ; i < NUM_DEVICE ; i ++)
+    {
+        
+        int x = SIZE*((i%3));
+        int y = -SIZE;
+        int z = SIZE*((i/3.0f));
+        glPushMatrix();
+        glTranslatef(x, y, z);
+        ofLine(0, 0, 0, dataSet[i].length);
+//        ofCircle(0,dataSet[i].length,50);
+        glPushMatrix();
+        glTranslatef(0,dataSet[i].length,0);
+
+        gluSphere(quadric, 50, 64, 64);
+        glPopMatrix();
+        glPopMatrix();
+    }
+    glPopMatrix();
+    ofPopStyle();
+    cam.end();
+        directionalLight.disable();
+    ofDisableLighting();
+        glDisable(GL_DEPTH_TEST);
     timeline.draw();
 }
 
@@ -540,7 +639,20 @@ void testApp::receivedTrigger(ofxTLTriggerEventArgs& trigger){
     else
     {
         string s (trigger.triggerName+";");
-        
+        vector<string>devices=ofSplitString(trigger.triggerName, ";");
+        for(int i = 0 ; i < devices.size();i++)
+        {
+            vector<string>msg=ofSplitString(devices[i], ",");
+            cout << "Messgae from timeline" <<endl;
+            if(msg.size()==3)
+            {
+                int id = ofToInt(msg[0]);
+                dataSet[id].dir = msg[2][0];
+                if(dataSet[id].dir=='0')dataSet[id].length = 0;
+                dataSet[id].speed = ofToFloat(msg[1]);
+            }
+            
+        }
         timeDiff = ofGetElapsedTimef();
         serial.writeBytes((unsigned char*)s.c_str(),s.length());
         ofLog(OF_LOG_VERBOSE,"serial.writeBytes "+s);
@@ -565,12 +677,15 @@ void testApp::keyPressed(int key){
             //ofSleepMillis(5000);
         }
             break;
-            
+        case OF_KEY_RETURN:
+            waveform.togglePlay();
+
+            break;
         case ' ':
             timeline.togglePlay();
             break;
         case 'h':
-            timeline.toggleShow();
+            isTimelineShow = timeline.toggleShow();
             break;
         case '\t':
             gui->toggleVisible(); 
@@ -599,7 +714,7 @@ void testApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
-    
+
 }
 
 //--------------------------------------------------------------

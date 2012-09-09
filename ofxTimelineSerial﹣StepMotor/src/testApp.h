@@ -2,12 +2,25 @@
 
 #include "ofMain.h"
 #include "ofxTimeline.h"
+#include "ofxTLAudioWaveform.h"
 #include "ofxUI.h"
 #include "ofxMidi.h"
 
 #define NUM_DEVICE 9
 #define NUM_BYTES 1024
-
+class DataSet
+{
+public:
+    DataSet()
+    {
+        length = 0;
+        dir = 'S';
+        speed = 0;
+    }
+    float length;
+    char dir;
+    float speed;
+};
 class testApp : public ofBaseApp , public ofxMidiListener {
     
 public:
@@ -26,6 +39,7 @@ public:
     void gotMessage(ofMessage msg);
     
     ofxTimeline timeline;
+    ofxTLAudioWaveform waveform;
 	
     void receivedTrigger(ofxTLTriggerEventArgs& trigger);
     
@@ -55,4 +69,11 @@ public:
 	
 	ofxMidiIn	midiIn;
 	ofxMidiMessage midiMessage;
+    ofEasyCam cam;
+    DataSet dataSet[NUM_DEVICE];
+    
+    float count;
+    GLUquadricObj *quadric;
+    	ofLight directionalLight;
+    bool isTimelineShow;
 };

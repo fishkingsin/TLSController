@@ -15,9 +15,14 @@ void testApp::setup(){
 	eachWidth = ofGetScreenWidth()/NUM_DEVICE;
 	timeline.setup();
     timeline.setWidth(ofGetScreenWidth());
-	timeline.setDurationInFrames(30*60*3);
+	
 	timeline.setLoopType(OF_LOOP_NORMAL);
-    
+    timeline.enableSnapToBPM(120.f);
+	timeline.enableDrawBPMGrid(true);
+    waveform.setup();
+	waveform.loadSoundfile("6)219 - Howlin' Wolf - Spoonful (full).wav");
+    timeline.setDurationInSeconds(waveform.getDuration());
+    timeline.addElement("Track", &waveform);	
 	
     for(int i = 0 ; i < NUM_DEVICE ; i++)
     {
@@ -83,7 +88,7 @@ void testApp::update(){
     int b_  = ofMap(timeline.getKeyframeValue(device_name+"_Blue"),0,255,1,254);
     
     string mystr = ofToString(sendwhich+1,0)+","+ofToString(r_,0)+","+ofToString(g_,0)+","+ofToString(b_,0)+"\n";
-    ofLog(OF_LOG_VERBOSE,"Serial write bytes : "+mystr);
+    //ofLog(OF_LOG_VERBOSE,"Serial write bytes : "+mystr);
     serial.writeBytes((unsigned char*)mystr.c_str(),mystr.length());
     
     
@@ -162,12 +167,17 @@ void testApp::keyPressed(int key){
             }
             break;
         case ' ':
-            timeline.togglePlay();
+            waveform.togglePlay();
             break;
+//        case OF_KEY_RETURN:
+//            timeline.togglePlay();
+//            break;
         case 'h':
             timeline.toggleShow();
             break;
-            
+            case 'f':
+            ofToggleFullscreen();
+            break;
         default:
             break;
     }

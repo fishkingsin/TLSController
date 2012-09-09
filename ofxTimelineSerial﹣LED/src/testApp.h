@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "ofxTimeline.h"
+#include "ofxTLAudioWaveform.h"
 #include "ofxMidi.h"
 #define NUM_DEVICE 3
 #define NUM_BYTES 256
@@ -35,6 +36,7 @@ class testApp : public ofBaseApp, public ofxMidiListener {
 		void gotMessage(ofMessage msg);
 		
         ofxTimeline timeline;
+    	ofxTLAudioWaveform waveform;
 	
         void receivedTrigger(ofxTLTriggerEventArgs& trigger);
     ofSerial serial;
