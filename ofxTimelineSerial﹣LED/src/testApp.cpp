@@ -53,7 +53,9 @@ void testApp::setup(){
 	// connected to.
 	// (ie, COM4 on a pc, /dev/tty.... on linux, /dev/tty... on a mac)
 	// arduino users check in arduino app....
-    serial.setup(deviceList[0].getDeviceName(), 57600);
+	ofxXmlSettings xml("config.xml");
+	
+    serial.setup(xml.getValue("DEVICE", "/dev/tty.usbserial-11U3V4KS"), 57600);
     //serial.setup("/dev/tty.usbserial-A4001JgX", 57600);
 	//serial.setup("/dev/tty.usbserial-11U3V4KS", 57600);
     serial.setVerbose(false);
