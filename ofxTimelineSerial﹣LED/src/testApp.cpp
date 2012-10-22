@@ -85,13 +85,20 @@ void testApp::newMidiMessage(ofxMidiMessage& msg) {
 
 void testApp::update(){ 
     string device_name = "Device_"+ofToString(sendwhich);
-    int r_  = ofMap(timeline.getKeyframeValue(device_name+"_Red"),0,255,1,254);
-    int g_  = ofMap(timeline.getKeyframeValue(device_name+"_Green"),0,255,1,254);
-    int b_  = ofMap(timeline.getKeyframeValue(device_name+"_Blue"),0,255,1,254);
+    int r_  = ofMap(timeline.getKeyframeValue(device_name+"_Red"),0,255,1,128);
+    int g_  = ofMap(timeline.getKeyframeValue(device_name+"_Green"),0,255,1,128);
+    int b_  = ofMap(timeline.getKeyframeValue(device_name+"_Blue"),0,255,1,128);
     
-    string mystr = ofToString(sendwhich+1,0)+","+ofToString(r_,0)+","+ofToString(g_,0)+","+ofToString(b_,0)+"\n";
+//    string mystr = ofToString(sendwhich+1,0)+","+ofToString(r_,0)+","+ofToString(g_,0)+","+ofToString(b_,0)+"\n";
+	char mystr[6];
+	mystr[0] = 254;
+	mystr[1] = sendwhich+1;
+	mystr[2] = _r;
+	mystr[3] = _g
+	mystr[4] = _b;
+	mystr[5] = 255;
     //ofLog(OF_LOG_VERBOSE,"Serial write bytes : "+mystr);
-    serial.writeBytes((unsigned char*)mystr.c_str(),mystr.length());
+    serial.writeBytes((unsigned char*)mystr,6);
     
     
     nTimesRead = 0;
@@ -163,9 +170,18 @@ void testApp::keyPressed(int key){
         case 27:
             for(int i = 0 ; i < NUM_DEVICE ; i++)
             {
-                string mystr = ofToString(i+1,0)+","+ofToString(0,0)+","+ofToString(0,0)+","+ofToString(0,0)+"\n";
-                ofLog(OF_LOG_VERBOSE,"Serial write bytes : "+mystr);
-                serial.writeBytes((unsigned char*)mystr.c_str(),mystr.length());
+//                string mystr = ofToString(i+1,0)+","+ofToString(0,0)+","+ofToString(0,0)+","+ofToString(0,0)+"\n";
+//                ofLog(OF_LOG_VERBOSE,"Serial write bytes : "+mystr);
+				char mystr[6];
+				mystr[0] = 254;
+				mystr[1] = i+1;
+				mystr[2] = 0;
+				mystr[3] = 0;
+				mystr[4] = 0;
+				mystr[5] = 255;
+				//ofLog(OF_LOG_VERBOSE,"Serial write bytes : "+mystr);
+				serial.writeBytes((unsigned char*)mystr,6);
+//                serial.writeBytes((unsigned char*)mystr.c_str(),mystr.length());
             }
             break;
         case ' ':
