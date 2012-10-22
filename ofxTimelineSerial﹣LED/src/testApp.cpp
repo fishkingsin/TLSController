@@ -93,9 +93,9 @@ void testApp::update(){
 	char mystr[6];
 	mystr[0] = 254;
 	mystr[1] = sendwhich+1;
-	mystr[2] = _r;
-	mystr[3] = _g
-	mystr[4] = _b;
+	mystr[2] = r_;
+	mystr[3] = g_;
+	mystr[4] = b_;
 	mystr[5] = 255;
     //ofLog(OF_LOG_VERBOSE,"Serial write bytes : "+mystr);
     serial.writeBytes((unsigned char*)mystr,6);
